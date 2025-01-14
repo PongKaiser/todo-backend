@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     environment {
         MONGO_URI = 'mongodb://localhost:27017/'
     }
