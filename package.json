@@ -6,7 +6,8 @@
   "scripts": {
     "development": "nodemon src",
     "start": "node src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Build server\""
   },
   "author": "Eren OKUR",
   "license": "MIT",
