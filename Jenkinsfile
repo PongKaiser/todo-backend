@@ -26,9 +26,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                        pm2 start npm --name "todo-backend" -- start
+                        export JENKINS_NODE_COOKIE=dontKillMe; pm2 start npm --name "todo-backend" -- start
                         pm2 save
-                        pm2 start "todo-backend"
                     """
                 }
             }
