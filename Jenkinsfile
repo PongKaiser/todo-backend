@@ -31,6 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
+                    sh 'fuser -k 3000/tcp || true'
                     sh 'nohup npm start &'
                 }
             }
