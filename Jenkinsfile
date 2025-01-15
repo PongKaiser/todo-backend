@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'nohup npm start > server.log 2>&1 &'
+                    sh 'pm2 start src --name todo-backend'
                 }
             }
         }
