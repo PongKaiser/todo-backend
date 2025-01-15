@@ -12,17 +12,10 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    sh 'npm install'
-                }
-            }
-        }
-
         stage('Build') {
             steps {
                 script {
+                    sh 'npm install'
                     sh 'npm run build'
                 }
             }
@@ -31,8 +24,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'fuser -k 3000/tcp || true'
-                    sh 'nohup npm start &'
+                    sh """
+                        fuser -k 3000/tcp || true
+                        nohup npm start > app.log 2>&1 &
+                    """
                 }
             }
         }
