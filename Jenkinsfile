@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/PongKaiser/todo-backend.git']]])
+                git branch: 'main', url: 'https://github.com/PongKaiser/todo-backend.git'
             }
         }
 
