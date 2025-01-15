@@ -22,8 +22,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                        fuser -k 3000/tcp || true
-                        pm2 start 'npm start'
+                        pm2 restart todo-backend || pm2 start npm --name "todo-backend" -- start
+                        pm2 save
                     """
                 }
             }
