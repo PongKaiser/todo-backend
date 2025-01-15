@@ -23,7 +23,7 @@ pipeline {
                 script {
                     sh """
                         fuser -k 3000/tcp || true
-                        forever start -c "npm start"
+                        pm2 start 'npm start'
                     """
                 }
             }
