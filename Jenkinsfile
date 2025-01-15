@@ -23,7 +23,7 @@ pipeline {
                 script {
                     sh """
                         fuser -k 3000/tcp || true
-                        nohup npm start > app.log 2>&1 &
+                        forever start -c "npm start"
                     """
                 }
             }
