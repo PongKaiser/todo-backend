@@ -21,3 +21,4 @@ router.post("/activateTask", [authCheck.verifyToken], controller.activateTask);
 router.post("/createTask", [authCheck.verifyToken], controller.createTask);
 
 module.exports = router;
+
