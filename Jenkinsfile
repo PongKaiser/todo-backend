@@ -27,7 +27,6 @@ pipeline {
                 script {
                     sh """
                         pm2 restart todo-backend || pm2 start npm --name "todo-backend" -- start
-                        pm2 save
                     """
                 }
             }
