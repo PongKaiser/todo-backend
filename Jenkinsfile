@@ -25,6 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
+                    sh 'pm2 start todo-backend'
                     sh 'pm2 start src --name todo-backend'
                 }
             }
