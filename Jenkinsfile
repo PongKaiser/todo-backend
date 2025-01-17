@@ -29,8 +29,9 @@ pipeline {
                         sh 'npm install -g pm2'
                     }
                     sh """
+                        export JENKINS_NODE_COOKIE=dontKillMe;
                         pm2 stop all
-                        export JENKINS_NODE_COOKIE=dontKillMe; pm2 start npm --name "todo-backend" -- start
+                        pm2 start npm --name "todo-backend" -- start
                         pm2 save
                     """
                 }
