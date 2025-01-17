@@ -30,7 +30,6 @@ pipeline {
                     }
                     sh """
                         export JENKINS_NODE_COOKIE=dontKillMe;
-                        pm2 stop all
                         pm2 start npm --name "todo-backend" -- start
                         pm2 save
                     """
